@@ -31,13 +31,31 @@ FD13-LiteUSB/FD13LITE.img: FD13-LiteUSB/%: FD13-LiteUSB.zip
 	mkdir -p $(@D)
 	bsdtar xfO $< $* >$@
 
+plan9-1e-bootloader.img: FD13-LiteUSB/FD13LITE.img
+	cp $< $@.tmp
+	mkdir -p $@.d
+	set -x; { \
+	    cleanup=(); \
+	    trap 'for cmd in "$${cleanup[@]}"; do eval "$$cmd"; done' EXIT; \
+	    \
+	    dev=$$(sudo losetup --find --show --partscan $@.tmp); \
+	    cleanup+=("sudo losetup --detach $$dev"); \
+	    \
+	    sudo mount "$${dev}p1" $@.d; \
+	    cleanup+=('sudo umount $@.d'); \
+	    \
+	    printf 'a:b.com\r\n' | sudo tee $@.d/setup.bat; \
+	}
+	rmdir $@.d
+	mv $@.tmp $@
+
 plan9-1e/sys/lib/pcdisk: plan9-1e.tar.bz2
 	mkdir -p $(@D)
 	bsdtar xfO $< $@ >$@
 
-run-1e: FD13-LiteUSB/FD13LITE.img
+run-1e: plan9-1e-bootloader.img
 run-1e: plan9-1e/sys/lib/pcdisk
-	qemu-system-i386 -cpu 486 -hda FD13-LiteUSB/FD13LITE.img -fda plan9-1e/sys/lib/pcdisk -boot c
+	qemu-system-i386 -cpu 486 -hda plan9-1e-bootloader.img -fda plan9-1e/sys/lib/pcdisk -boot c
 
 ######################################################################
 
