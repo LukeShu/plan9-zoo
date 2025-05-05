@@ -72,11 +72,14 @@ drive/fdb   = index=1,if=floppy
 
 run-1e: plan9-1e-fdboot.img
 run-1e: plan9-1e/sys/lib/pcdisk
+run-1e: plan9-1e-script.gdb
 	qemu-system-i386 $(qemu_extra) \
 	  -cpu 486 \
 	  -drive $(drive/hda),format=raw,readonly=off,file=plan9-1e-fdboot.img \
 	  -drive $(drive/fda),format=raw,readonly=on,file=plan9-1e/sys/lib/pcdisk \
-	  -boot c
+	  -boot c & \
+	gdb --nh --batch --command=plan9-1e-script.gdb & \
+	wait
 
 ######################################################################
 
