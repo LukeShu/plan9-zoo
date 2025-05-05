@@ -1,6 +1,6 @@
 # -*- Mode: gdb-script -*-
 
-target remote localhost:1234
+target remote ./plan9-1e/run.sock
 
 # "Patch" b.com:l.s:flush() to not forget to initialize FS and GS
 # (this was fixed in 2e).
