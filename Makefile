@@ -55,9 +55,42 @@ plan9-1e/sys/lib/pcdisk: plan9-1e.tar.bz2
 	mkdir -p $(@D)
 	bsdtar xfO $< $@ >$@
 
+#qemu_extra = -S -s
+#qemu_extra = -icount shift=auto,rr=record,rrfile=replay.bin,rrsnapshot=boot_s
+#qemu_extra = -icount shift=auto,rr=replay,rrfile=replay.bin -S -s
+#qemu_extra = -rtc clock=vm -icount shift=1,align=off
+#qemu_extra = -d in_asm -D in_asm.log
+#qemu_extra = -d in_asm,exec,cpu,nochain -D in_asm-3.log
+#qemu_extra = -d int -D int-1.log
+#qemu_extra = -d int -D int-2.log -S -s
+#qemu_extra = -serial stdio
+#qemu_extra = -d int,mmu -D int-mmu-1.log -S -s
+#qemu_extra = -d mmu -D mmu-1.log
+#qemu_extra = -m 1G
+#qemu_extra = -d in_asm,int -D int-asm-1.log -S -s
+
+qemu_extra += -S # Do not start CPU at startup
+qemu_extra += -gdb tcp::1234
+# qemu_extra += -action reboot=shutdown   # reset|shutdown [default=reset]
+# qemu_extra += -action shutdown=pause    # poweroff|pause [default=poweroff]
+# qemu_extra += -action panic=pause       # pause|shutdown|exit-failure|none [default=shutdown]
+# qemu_extra += -action watchdog=debug    # reset|shutdown|poweroff|inject-nmi|pause|debug|none [default=reset]
+
+drive/cdrom = index=2,media=cdrom
+drive/hda   = index=0,media=disk
+drive/hdb   = index=1,media=disk
+drive/hdc   = index=2,media=disk
+drive/hdd   = index=3,media=disk
+drive/fda   = index=0,if=floppy
+drive/fdb   = index=1,if=floppy
+
 run-1e: plan9-1e-fdboot.img
 run-1e: plan9-1e/sys/lib/pcdisk
-	qemu-system-i386 -no-reboot -cpu 486 -hda plan9-1e-fdboot.img -fda plan9-1e/sys/lib/pcdisk -boot c
+	qemu-system-i386 $(qemu_extra) \
+	  -cpu 486 \
+	  -drive $(drive/hda),format=raw,readonly=off,file=plan9-1e-fdboot.img \
+	  -drive $(drive/fda),format=raw,readonly=on,file=plan9-1e/sys/lib/pcdisk \
+	  -boot c
 
 ######################################################################
 

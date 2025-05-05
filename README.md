@@ -25,3 +25,48 @@ either be file-server or terminal; that there is no "stand-alone" mode
 for these ports.
 
 [TME]: https://people.csail.mit.edu/fredette/tme/index.html
+
+runproc: 
+  0x8000b042
+  0x8000b117
+
+
+text:
+  0x800010bc
+  0x8003a6ab
+
+bochs: 
+ lbreak 0x21d90 # l.s:origin
+ lbreak 0x8011d # l.s:lowcore
+
+at freedos prompt:
+cs 06c1
+ds 00d9
+es 00d9
+ss 00d9
+fs 10b3
+gs 1e4b
+
+at l.s:origin (0x21d90)
+cs 21c9
+ds 21c9
+es 21c9
+ss 21c9
+fs 21c9
+gs 1e4b
+
+after mode change:
+cs 8000
+ds 8000
+es 8000
+ss 21c9
+fs 21c9
+gs 1e4b
+
+at b.com prompt:
+cs 1000
+ds 8000
+es 8000
+ss 8000
+fs 21c9
+gs 1e4b

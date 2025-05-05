@@ -1,0 +1,21 @@
+#lbreak 0x8000123a # enter intrcommon
+#lbreak 0x80001254 # right before pop gs
+#lbreak 0x8000128b # enter intrscommon
+#lbreak 0x800012a5 # right before pop gs
+#lbreak 0x800012c6 # enter intr14 (pagefault)
+#lbreak 0x80005e71 # main(): call schedinit
+
+# lbreak 0x00000100
+# lbreak 0x80000100
+# lbreak 0x80080100
+# lbreak 0x00080100
+# vbreak 0x0000:0x0100
+# vbreak 0x0008:0x0100
+# vbreak 0x8008:0x0100
+# vbreak 0x8000:0x0100
+
+lbreak 0x21d90 # l.s:origin
+#lbreak 0x21da8 # in l.s:origin, "JMPFAR	0X8000:$lowcore(SB)"
+lbreak 0x8011d # l.s:lowcore
+
+cont
