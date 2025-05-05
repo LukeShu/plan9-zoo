@@ -26,14 +26,7 @@ for these ports.
 
 [TME]: https://people.csail.mit.edu/fredette/tme/index.html
 
-runproc: 
-  0x8000b042
-  0x8000b117
-
-
-text:
-  0x800010bc
-  0x8003a6ab
+## scratch notes
 
 bochs: 
  lbreak 0x21d90 # l.s:origin

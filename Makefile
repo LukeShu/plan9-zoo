@@ -55,26 +55,12 @@ plan9-1e/sys/lib/pcdisk: plan9-1e.tar.bz2
 	mkdir -p $(@D)
 	bsdtar xfO $< $@ >$@
 
-#qemu_extra = -S -s
-#qemu_extra = -icount shift=auto,rr=record,rrfile=replay.bin,rrsnapshot=boot_s
-#qemu_extra = -icount shift=auto,rr=replay,rrfile=replay.bin -S -s
-#qemu_extra = -rtc clock=vm -icount shift=1,align=off
-#qemu_extra = -d in_asm -D in_asm.log
-#qemu_extra = -d in_asm,exec,cpu,nochain -D in_asm-3.log
-#qemu_extra = -d int -D int-1.log
-#qemu_extra = -d int -D int-2.log -S -s
-#qemu_extra = -serial stdio
-#qemu_extra = -d int,mmu -D int-mmu-1.log -S -s
-#qemu_extra = -d mmu -D mmu-1.log
-#qemu_extra = -m 1G
-#qemu_extra = -d in_asm,int -D int-asm-1.log -S -s
-
 qemu_extra += -S # Do not start CPU at startup
 qemu_extra += -gdb tcp::1234
-# qemu_extra += -action reboot=shutdown   # reset|shutdown [default=reset]
-# qemu_extra += -action shutdown=pause    # poweroff|pause [default=poweroff]
-# qemu_extra += -action panic=pause       # pause|shutdown|exit-failure|none [default=shutdown]
-# qemu_extra += -action watchdog=debug    # reset|shutdown|poweroff|inject-nmi|pause|debug|none [default=reset]
+qemu_extra += -action reboot=shutdown   # reset|shutdown [default=reset]
+#qemu_extra += -action shutdown=pause    # poweroff|pause [default=poweroff]
+#qemu_extra += -action panic=pause       # pause|shutdown|exit-failure|none [default=shutdown]
+#qemu_extra += -action watchdog=debug    # reset|shutdown|poweroff|inject-nmi|pause|debug|none [default=reset]
 
 drive/cdrom = index=2,media=cdrom
 drive/hda   = index=0,media=disk
