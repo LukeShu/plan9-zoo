@@ -50,9 +50,11 @@ Legend:
  - ✅ Working
  - 🚧 In-progress
  - ❌ Not-yet implemented
- - ⛔ Unlikely to ever be implemented
- - ❔ I don't think this version/platform/role combination exists, but I'm not 100% sure
- - (no icon) This version/platform/role combination doesn't exist
+ - ⛔ Unlikely to ever be implemented (but theoretically possible)
+ - (no icon) Not possible to implement (i.e. that version on that
+   platform officially didn't support that role)
+ - ❔ I don't think this is possible to implement, but I'm not 100%
+   sure
 
 ### `1e` (1st Edition, 2nd Release, 1993-01-03)
 
