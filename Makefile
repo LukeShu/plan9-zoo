@@ -35,3 +35,4 @@ qemu-drive/fdb   = index=1,if=floppy
 
 include downloads/dir.mk
 include plan9-1e/dir.mk
+include plan9-4e/dir.mk

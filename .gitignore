@@ -1,5 +1,6 @@
 *.bz2
 *.zip
 *.img
+*.iso
 *.tmp
 *.sock
