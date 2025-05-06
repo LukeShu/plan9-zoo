@@ -36,7 +36,8 @@ Legend:
  - 🚧 In-progress
  - ❌ Not-yet implemented
  - ⛔ Unlikely to ever be implemented
- - ❔ I don't think this combination exists, but I'm not 100% sure
+ - ❔ I don't think this version/platform/role combination exists, but I'm not 100% sure
+ - (no icon) This version/platform/role combination doesn't exist
 
 ### `1e` (1st Edition, 2nd Release, 1993-01-03)
 
