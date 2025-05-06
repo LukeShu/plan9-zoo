@@ -5,6 +5,7 @@ p9f_mirror = https://ftp.osuosl.org/pub/plan9/history
 #p9f_mirror = https://9p.io/plan9/download/history
 
 fd13_mirror = https://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.3/official
+fd14_mirror = https://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.4
 
 qemu_extra += -action reboot=shutdown   # reset|shutdown [default=reset]
 #qemu_extra += -action shutdown=pause    # poweroff|pause [default=poweroff]

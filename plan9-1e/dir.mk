@@ -1,7 +1,7 @@
-plan9-1e/FD13LITE.img: downloads/FD13-LiteUSB.zip
-	bsdtar xfO $< FD13LITE.img >$@
+plan9-1e/FD14LITE.img: downloads/FD14-LiteUSB.zip
+	bsdtar xfO $< FD14LITE.img >$@
 
-plan9-1e/boot-hdd.img: plan9-1e/FD13LITE.img plan9-1e/fdauto.bat plan9-1e/fdconfig.sys
+plan9-1e/boot-hdd.img: plan9-1e/FD14LITE.img plan9-1e/fdauto.bat plan9-1e/fdconfig.sys
 	cp $< $@.tmp
 	mkdir -p $@.d
 	set -x; { \
