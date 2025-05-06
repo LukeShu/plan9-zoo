@@ -14,22 +14,37 @@ Weird dependencies for plan9-1e:
  - GNU Bash (`bash`)
  - GNU Debugger (`gdb`)
  - basic utilities (as from GNU coreutils):
-	+ `mkdir`
-	+ `rmdir`
-	+ `mv`
-	+ `cp`
-	+ `rm`
+    + `mkdir`
+    + `rmdir`
+    + `mv`
+    + `cp`
+    + `rm`
  - util-linux:
     + `losetup`
-	+ `mount`
+    + `mount`
  - `sudo`
 
 ## Usage
 
-Simply run `make run/{VERSION}/{PLATFORM}/{ROLE}`, where `{VERSION}`
-is one of the following sub-sections, `{PLATFORM}` is from the left
-column of the table in that section, and `{ROLE}` is from the top row
-of the table.
+Simply run `make run/{VERSION}/{PLATFORM}/{ROLE}`, where:
+
+ - `{VERSION}` is one of `1e`, `2e`, `3e`, `4e-2002`, or `4e-2014`
+ - `{ROLE}` is one of
+    + `standalone`: A self-contained single-node workstation install
+      that boots from local media.
+    + `terminal`: A workstation that boots from the network (ideally
+      these would be entirely diskless, but some of them need a local
+      bootloader or kernel)
+    + `cpuserver`: A headless server that a terminal can run do things
+      on.
+    + `fileserver`: A headless server that does not expose its CPU to
+      the network, but serves as the storage for all connected CPU
+      servers and terminals (until 4e 2007 or so, the fileserver
+      kernel was separate from the normal kernel).
+ - `{PLATFORM}` is a `objtype-subtype` pair that supports the
+   `{VERSION}` and `{ROLE}` you want, from the version matrices below.
+
+## Version matrices
 
 Legend:
  - ✅ Working
@@ -50,7 +65,7 @@ Legend:
 | `mips-6280` (MIPS 6280)          |              |            |             | ❌           |                                                       |
 | `mips-indigo` (SGI Indigo)       | ❔           | ❌         | ❌          |              | Added in 2nd Release; not in any docs, just in source |
 | `mips-magnum` (MIPS Magnum 3000) | ❔           | ❌         | ❌          | ❌           | MAME (Qemu will not work)                             |
-| `mips-power` (SGI Power Series)  |              |            | ❌          | ❌           | Nongraphical                                          |
+| `mips-power` (SGI Power Series)  |              |            | ❌          | ❌           | Nongraphical, so no standalone/terminal               |
 | `sparc-ss` (SPARCstation)        | ❔           | ❌         | ❌          | ❌           | MAME or TME (Qemu will not work)                      |
 
  - `run/1e/386-pc/standalone`:
