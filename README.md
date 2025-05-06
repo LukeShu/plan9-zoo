@@ -60,7 +60,7 @@ Legend:
  - 🚧 In-progress
  - ❌ Not-yet implemented
  - ⛔ Unlikely to ever be implemented (but theoretically possible)
- - (no icon) Not possible to implement (i.e. that version on that
+ - ⚪ Not possible to implement (i.e. that version on that
    platform officially didn't support that role)
  - ❔ I don't think this is possible to implement, but I'm not 100%
    sure
@@ -69,14 +69,14 @@ Legend:
 
 |                                  | `standalone` | `terminal` | `cpuserver` | `fileserver` | Notes                                                 |
 |----------------------------------|--------------|------------|-------------|--------------|-------------------------------------------------------|
-| `386-pc` (i386/i486)             | 🚧           | ❌         | ❌          |              | Notable for standalone support                        |
-| `68020-gnot` (AT&T Gnot)         | ❔           | ⛔         | ⛔          |              | Hardware never released outside AT&T                  |
-| `68020-next` (NeXTstation)       | ❔           | ❌         | ❌          |              | "Previous" emulator                                   |
-| `hobbit-hobbit` (AT&T Hobbit)    | ❔           | ⛔         | ⛔          |              | Hardware quickly discontinued                         |
-| `mips-6280` (MIPS 6280)          |              |            |             | ❌           |                                                       |
-| `mips-indigo` (SGI Indigo)       | ❔           | ❌         | ❌          |              | Added in 2nd Release; not in any docs, just in source |
+| `386-pc` (i386/i486)             | 🚧           | ❌         | ❌          | ⚪           | Notable for standalone support                        |
+| `68020-gnot` (AT&T Gnot)         | ❔           | ⛔         | ⛔          | ⚪           | Hardware never released outside AT&T                  |
+| `68020-next` (NeXTstation)       | ❔           | ❌         | ❌          | ⚪           | "Previous" emulator                                   |
+| `hobbit-hobbit` (AT&T Hobbit)    | ❔           | ⛔         | ⛔          | ⚪           | Hardware quickly discontinued                         |
+| `mips-6280` (MIPS 6280)          | ⚪           | ⚪         | ⚪          | ❌           |                                                       |
+| `mips-indigo` (SGI Indigo)       | ❔           | ❌         | ❌          | ⚪           | Added in 2nd Release; not in any docs, just in source |
 | `mips-magnum` (MIPS Magnum 3000) | ❔           | ❌         | ❌          | ❌           | MAME (Qemu will not work)                             |
-| `mips-power` (SGI Power Series)  |              |            | ❌          | ❌           | Nongraphical, so no standalone/terminal               |
+| `mips-power` (SGI Power Series)  | ⚪           | ⚪         | ❌          | ❌           | Nongraphical, so no standalone/terminal               |
 | `sparc-ss` (SPARCstation)        | ❔           | ❌         | ❌          | ❌           | MAME or TME (Qemu will not work)                      |
 
  - `run/1e/386-pc/standalone`:
@@ -95,12 +95,12 @@ Legend:
 |                                    | `standalone` | `terminal` | `cpuserver` | `fileserver` | Notes |
 |------------------------------------|--------------|------------|-------------|--------------|-------|
 | `386-pc` (i386/i486/Pentium)       | ❌           | ❌         | ❌          | ❌           |       |
-| `68020-gnot` (AT&T Gnot)           | ❔           | ❌         | ❌          |              |       |
-| `68020-next` (NeXTstation)         | ❔           | ❌         | ❌          |              |       |
-| `mips-6280` (MIPS 6280)            |              |            |             | ❌           |       |
-| `mips-chm` (SGI Challenge M)       | ❔           | ❌         | ❌          |              |       |
-| `mips-indigo3k` (SGI Indigo R3000) | ❔           | ❌         | ❌          |              |       |
-| `mips-indigo4k` (SGI Indigo R4000) | ❔           | ❌         | ❌          |              |       |
+| `68020-gnot` (AT&T Gnot)           | ❔           | ❌         | ❌          | ⚪           |       |
+| `68020-next` (NeXTstation)         | ❔           | ❌         | ❌          | ⚪           |       |
+| `mips-6280` (MIPS 6280)            | ⚪           | ⚪         | ⚪          | ❌           |       |
+| `mips-chm` (SGI Challenge M)       | ❔           | ❌         | ❌          | ⚪           |       |
+| `mips-indigo3k` (SGI Indigo R3000) | ❔           | ❌         | ❌          | ⚪           |       |
+| `mips-indigo4k` (SGI Indigo R4000) | ❔           | ❌         | ❌          | ⚪           |       |
 | `mips-magnum` (MIPS Magnum)        | ❔           | ❌         | ❌          | ❌           |       |
 | `mips-power` (SGI Power Series)    | ❔           | ❌         | ❌          | ❌           |       |
 | `sparc-ss` (SPARCstation)          | ❔           | ❌         | ❌          | ❌           |       |
@@ -111,20 +111,20 @@ Legend:
 |                                                                   | `standalone` | `terminal` | `cpuserver` | `fileserver` | Notes                 |
 |-------------------------------------------------------------------|--------------|------------|-------------|--------------|-----------------------|
 | `386-pc` (i386/i486/Pentium)                                      | ❌           | ❌         | ❌          | ❌           | fileserver is PC-only |
-| `alpha-alphapc` (Alpha PC 164)                                    | ❔           | ❌         | ❌          |              |                       |
-| `arm-bitsy` (Compaq Ipaq (ARM), added in 5th Release, 2001-03-28) | ❌           | ❌         | ❌          |              |                       |
-| `mips-carrera` (Carrera MIPS PC)                                  | ❔           | ❌         | ❌          |              |                       |
-| `mips-ch` (SGI Challenge, dropped in 2nd Release, 2000-06-12)     | ❔           | ❌         | ❌          |              |                       |
-| `power-mpc` (AT&T Viaduct MPC8500)                                | ❔           | ❌         | ❌          |              |                       |
+| `alpha-alphapc` (Alpha PC 164)                                    | ❔           | ❌         | ❌          | ⚪           |                       |
+| `arm-bitsy` (Compaq Ipaq (ARM), added in 5th Release, 2001-03-28) | ❌           | ❌         | ❌          | ⚪           |                       |
+| `mips-carrera` (Carrera MIPS PC)                                  | ❔           | ❌         | ❌          | ⚪           |                       |
+| `mips-ch` (SGI Challenge, dropped in 2nd Release, 2000-06-12)     | ❔           | ❌         | ❌          | ⚪           |                       |
+| `power-mpc` (AT&T Viaduct MPC8500)                                | ❔           | ❌         | ❌          | ⚪           |                       |
 
 ### `4e-2002` (4th Edition, 1st Release, 2002-04-27)
 
 |                            | `standalone` | `terminal` | `cpuserver` | `fileserver` | Notes                                   |
 |----------------------------|--------------|------------|-------------|--------------|-----------------------------------------|
 | `386-pc`                   | ❌           | ❌         | ❌          | ❌           | fileserver was PC-only until 2007 or so |
-| `alpha-alphapc` (Alpha PC) | ❌           | ❌         | ❌          |              | Dropped 2012-09-20                      |
-| `arm-bitsy` (Compaq Ipaq)  | ❌           | ❌         | ❌          |              | Dropped 2013-01-31                      |
-| `power-mtx`                | ❌           | ❌         | ❌          |              |                                         |
+| `alpha-alphapc` (Alpha PC) | ❌           | ❌         | ❌          | ⚪           | Dropped 2012-09-20                      |
+| `arm-bitsy` (Compaq Ipaq)  | ❌           | ❌         | ❌          | ⚪           | Dropped 2013-01-31                      |
+| `power-mtx`                | ❌           | ❌         | ❌          | ⚪           |                                         |
 
 ### `4e-2014` (4th Edition, Final (2500ish) Release, 2014-09-17)
 
