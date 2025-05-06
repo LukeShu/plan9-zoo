@@ -44,6 +44,12 @@ Simply run `make run/{VERSION}/{PLATFORM}/{ROLE}`, where:
  - `{PLATFORM}` is a `objtype-subtype` pair that supports the
    `{VERSION}` and `{ROLE}` you want, from the version matrices below.
 
+Example:
+
+```shell
+make run/1e/386-pc/standalone
+```
+
 The options you choose may have further post-boot instructions under
 the associated version matrix.
 
