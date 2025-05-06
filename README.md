@@ -2,10 +2,16 @@
 
 Dependencies:
  - GNU Make
+ - `sha256sum` (as from GNU coreutils)
+ - `grep -E`
+ - `curl`
+ - `bsdtar`
+ - `qemu-system-i386`
+
+Weird dependencies for plan9-1e:
  - GNU Bash (`bash`)
  - GNU Debugger (`gdb`)
- - GNU coreutils or similar:
-    + `sha256sum`
+ - basic utilities (as from GNU coreutils):
 	+ `mkdir`
 	+ `rmdir`
 	+ `mv`
@@ -14,11 +20,7 @@ Dependencies:
  - util-linux:
     + `losetup`
 	+ `mount`
- - `grep -E`
  - `sudo`
- - `curl`
- - `bsdtar`
- - `qemu-system-i386`
 
 Usage:
  - `make plan9-1e/run` (or just `make`)
