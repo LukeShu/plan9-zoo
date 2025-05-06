@@ -14,14 +14,16 @@ qemu_extra += -action reboot=shutdown   # reset|shutdown [default=reset]
 
 # Configure Make itself ##############################################
 
-.DEFAULT_GOAL = run/1e/pc/standalone
+.DEFAULT_GOAL = run/1e/386-pc/standalone
 .DELETE_ON_ERROR:
 .NOTINTERMEDIATE:
-SHELL = bash # for the plan9-1e/boot-hdd.img recipe
+SHELL = bash # for the 1e/386-pc/boot-hdd.img recipe
 
 # Utilities ##########################################################
 
 .PHONY: FORCE
+
+thisdir = $(patsubst %/,%,$(dir $(lastword $(MAKEFILE_LIST))))
 
 qemu-drive/cdrom = index=2,media=cdrom
 qemu-drive/hda   = index=0,media=disk
@@ -33,6 +35,9 @@ qemu-drive/fdb   = index=1,if=floppy
 
 # Main ###############################################################
 
+maintainer-clean::
+.PHONY: maintainer-clean
+
 include downloads/dir.mk
-include plan9-1e/dir.mk
-include plan9-4e/dir.mk
+include 1e/dir.mk
+include 4e/dir.mk
