@@ -36,22 +36,21 @@ Legend:
  - 🚧 In-progress
  - ❌ Not-yet implemented
  - ⛔ Unlikely to ever be implemented
- - ❓ I don't think this combination exists
- - "text" Why this combination does not exist
+ - ☐ I don't think this combination exists, but I'm not 100% sure
 
 ### `1e` (1st Edition, 2nd Release, 1993-01-03)
 
-|                                  | `standalone`         | `terminal`           | `cpuserver`          | `fileserver`            | Notes                                                 |
-|----------------------------------|----------------------|----------------------|----------------------|-------------------------|-------------------------------------------------------|
-| `386-pc` (i386/i486)             | 🚧                   | ❌                   | ❌                   | no `sys/src/fs/pc/`     | Notable for standalone support                        |
-| `68020-gnot` (AT&T Gnot)         | ❓                   | ⛔                   | ⛔                   | no `sys/src/fs/gnot/`   | Hardware never released outside AT&T                  |
-| `68020-next` (NeXTstation)       | ❓                   | ❌                   | ❌                   | no `sys/src/fs/next/`   | "Previous" emulator                                   |
-| `hobbit-hobbit` (AT&T Hobbit)    | ❓                   | ⛔                   | ⛔                   | no `sys/src/fs/hobbit/` | Hardware quickly discontinued                         |
-| `mips-6280` (MIPS 6280)          | no `sys/src/9/6280/` | no `sys/src/9/6280/` | no `sys/src/9/6280/` | ❌                      | -                                                     |
-| `mips-indigo` (SGI Indigo)       | ❓                   | ❌                   | ❌                   | no `sys/src/fs/indigo/` | Added in 2nd Release; not in any docs, just in source |
-| `mips-magnum` (MIPS Magnum 3000) | ❓                   | ❌                   | ❌                   | ❌                      | MAME (Qemu will not work)                             |
-| `mips-power` (SGI Power Series)  | nongraphic           | nongraphic           | ❌                   | ❌                      | -                                                     |
-| `sparc-ss` (SPARCstation)        | ❓                   | ❌                   | ❌                   | ❌                      | MAME or TME (Qemu will not work)                      |
+|                                  | `standalone` | `terminal` | `cpuserver` | `fileserver` | Notes                                                 |
+|----------------------------------|--------------|------------|-------------|--------------|-------------------------------------------------------|
+| `386-pc` (i386/i486)             | 🚧           | ❌         | ❌          |              | Notable for standalone support                        |
+| `68020-gnot` (AT&T Gnot)         | ☐            | ⛔         | ⛔          |              | Hardware never released outside AT&T                  |
+| `68020-next` (NeXTstation)       | ☐            | ❌         | ❌          |              | "Previous" emulator                                   |
+| `hobbit-hobbit` (AT&T Hobbit)    | ☐            | ⛔         | ⛔          |              | Hardware quickly discontinued                         |
+| `mips-6280` (MIPS 6280)          |              |            |             | ❌           |                                                       |
+| `mips-indigo` (SGI Indigo)       | ☐            | ❌         | ❌          |              | Added in 2nd Release; not in any docs, just in source |
+| `mips-magnum` (MIPS Magnum 3000) | ☐            | ❌         | ❌          | ❌           | MAME (Qemu will not work)                             |
+| `mips-power` (SGI Power Series)  |              |            | ❌          | ❌           | Nongraphical                                          |
+| `sparc-ss` (SPARCstation)        | ☐            | ❌         | ❌          | ❌           | MAME or TME (Qemu will not work)                      |
 
  - `run/1e/386-pc/standalone`:
    1. First the bootloader will prompt you where to load the kernel
@@ -69,27 +68,27 @@ Legend:
 |                                    | `standalone` | `terminal` | `cpuserver` | `fileserver` | Notes |
 |------------------------------------|--------------|------------|-------------|--------------|-------|
 | `386-pc` (i386/i486/Pentium)       | ❌           | ❌         | ❌          | ❌           |       |
-| `68020-gnot` (AT&T Gnot)           | ❓           | ❌         | ❌          |              |       |
-| `68020-next` (NeXTstation)         | ❓           | ❌         | ❌          |              |       |
+| `68020-gnot` (AT&T Gnot)           | ☐            | ❌         | ❌          |              |       |
+| `68020-next` (NeXTstation)         | ☐            | ❌         | ❌          |              |       |
 | `mips-6280` (MIPS 6280)            |              |            |             | ❌           |       |
-| `mips-chm` (SGI Challenge M)       | ❓           | ❌         | ❌          |              |       |
-| `mips-indigo3k` (SGI Indigo R3000) | ❓           | ❌         | ❌          |              |       |
-| `mips-indigo4k` (SGI Indigo R4000) | ❓           | ❌         | ❌          |              |       |
-| `mips-magnum` (MIPS Magnum)        | ❓           | ❌         | ❌          | ❌           |       |
-| `mips-power` (SGI Power Series)    | ❓           | ❌         | ❌          | ❌           |       |
-| `sparc-ss` (SPARCstation)          | ❓           | ❌         | ❌          | ❌           |       |
-| `sparc-ss10` (SPARCstation-10)     | ❓           | ❌         | ❌          |              |       |
+| `mips-chm` (SGI Challenge M)       | ☐            | ❌         | ❌          |              |       |
+| `mips-indigo3k` (SGI Indigo R3000) | ☐            | ❌         | ❌          |              |       |
+| `mips-indigo4k` (SGI Indigo R4000) | ☐            | ❌         | ❌          |              |       |
+| `mips-magnum` (MIPS Magnum)        | ☐            | ❌         | ❌          | ❌           |       |
+| `mips-power` (SGI Power Series)    | ☐            | ❌         | ❌          | ❌           |       |
+| `sparc-ss` (SPARCstation)          | ☐            | ❌         | ❌          | ❌           |       |
+| `sparc-ss10` (SPARCstation-10)     | ☐            | ❌         | ❌          |              |       |
 
 ### `3e` (2rd Edition; 1st Release=2000-06-07, 5th Release=2001-03-28)
 
 |                                                                   | `standalone` | `terminal` | `cpuserver` | `fileserver` | Notes                 |
 |-------------------------------------------------------------------|--------------|------------|-------------|--------------|-----------------------|
 | `386-pc` (i386/i486/Pentium)                                      | ❌           | ❌         | ❌          | ❌           | fileserver is PC-only |
-| `alpha-alphapc` (Alpha PC 164)                                    | ❓           | ❌         | ❌          |              |                       |
+| `alpha-alphapc` (Alpha PC 164)                                    | ☐            | ❌         | ❌          |              |                       |
 | `arm-bitsy` (Compaq Ipaq (ARM), added in 5th Release, 2001-03-28) | ❌           | ❌         | ❌          |              |                       |
-| `mips-carrera` (Carrera MIPS PC)                                  | ❓           | ❌         | ❌          |              |                       |
-| `mips-ch` (SGI Challenge, dropped in 2nd Release, 2000-06-12)     | ❓           | ❌         | ❌          |              |                       |
-| `power-mpc` (AT&T Viaduct MPC8500)                                | ❓           | ❌         | ❌          |              |                       |
+| `mips-carrera` (Carrera MIPS PC)                                  | ☐            | ❌         | ❌          |              |                       |
+| `mips-ch` (SGI Challenge, dropped in 2nd Release, 2000-06-12)     | ☐            | ❌         | ❌          |              |                       |
+| `power-mpc` (AT&T Viaduct MPC8500)                                | ☐            | ❌         | ❌          |              |                       |
 
 ### `4e-2002` (4th Edition, 1st Release, 2002-04-27)
 
