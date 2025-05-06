@@ -14,7 +14,7 @@ qemu_extra += -action reboot=shutdown   # reset|shutdown [default=reset]
 
 # Configure Make itself ##############################################
 
-.DEFAULT_GOAL = plan9-1e/run
+.DEFAULT_GOAL = run/1e/pc/standalone
 .DELETE_ON_ERROR:
 .NOTINTERMEDIATE:
 SHELL = bash # for the plan9-1e/boot-hdd.img recipe

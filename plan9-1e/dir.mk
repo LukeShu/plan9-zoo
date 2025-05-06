@@ -24,15 +24,15 @@ plan9-1e/boot-hdd.img: plan9-1e/FD14LITE.img plan9-1e/fdauto.bat plan9-1e/fdconf
 plan9-1e/boot-floppy.img: downloads/plan9-1e.tar.bz2
 	bsdtar xfO $< plan9-1e/sys/lib/pcdisk >$@
 
-plan9-1e/run: plan9-1e/boot-hdd.img
-plan9-1e/run: plan9-1e/boot-floppy.img
-plan9-1e/run: plan9-1e/script.gdb
+run/1e/pc/standalone: plan9-1e/boot-hdd.img
+run/1e/pc/standalone: plan9-1e/boot-floppy.img
+run/1e/pc/standalone: plan9-1e/script.gdb
 	qemu-system-i386 $(qemu_extra) \
-	  -S -gdb unix:$@.sock,server=on \
+	  -S -gdb unix:plan9-1e/run.sock,server=on \
 	  -cpu 486 \
 	  -drive $(qemu-drive/hda),format=raw,readonly=off,file=plan9-1e/boot-hdd.img \
 	  -drive $(qemu-drive/fda),format=raw,readonly=on,file=plan9-1e/boot-floppy.img \
 	  -boot c & \
 	gdb --nh --batch --command=plan9-1e/script.gdb & \
 	wait
-.PHONY: plan9-1e/run
+.PHONY: run/1e/pc/standalone
